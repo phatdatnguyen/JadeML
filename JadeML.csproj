@@ -1,0 +1,786 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CE5AB707-C4B2-4A26-94F7-97685B2B7AB3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>JadeML</RootNamespace>
+    <AssemblyName>JadeML</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accord, Version=3.8.2.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>packages\Accord.3.8.2-alpha\lib\net462\Accord.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Controls, Version=3.8.2.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>packages\Accord.Controls.3.8.2-alpha\lib\net462\Accord.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Genetic, Version=3.8.2.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>packages\Accord.Genetic.3.8.2-alpha\lib\net462\Accord.Genetic.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.IO, Version=3.8.2.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>packages\Accord.IO.3.8.2-alpha\lib\net462\Accord.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.MachineLearning, Version=3.8.2.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>packages\Accord.MachineLearning.3.8.2-alpha\lib\net462\Accord.MachineLearning.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.MachineLearning.GPL, Version=3.8.2.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>packages\Accord.MachineLearning.GPL.3.8.2-alpha\lib\net462\Accord.MachineLearning.GPL.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Math, Version=3.8.2.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>packages\Accord.Math.3.8.2-alpha\lib\net462\Accord.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Math.Core, Version=3.8.2.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>packages\Accord.Math.3.8.2-alpha\lib\net462\Accord.Math.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Neuro, Version=3.8.2.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>packages\Accord.Neuro.3.8.2-alpha\lib\net462\Accord.Neuro.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Statistics, Version=3.8.2.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>packages\Accord.Statistics.3.8.2-alpha\lib\net462\Accord.Statistics.dll</HintPath>
+    </Reference>
+    <Reference Include="ControlzEx, Version=6.0.0.0, Culture=neutral, PublicKeyToken=69f1c32f803d307e, processorArchitecture=MSIL">
+      <HintPath>packages\ControlzEx.6.0.0-alpha0237\lib\net462\ControlzEx.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.3.3.11, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>packages\SharpZipLib.1.3.3\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Xaml.Behaviors.Wpf.1.1.39\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Barcodes, Version=1.0.3.450, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>packages\MindFusion.Diagramming.6.8.5\lib\net45\MindFusion.Barcodes.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Common, Version=1.3.5.452, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>packages\MindFusion.Diagramming.6.8.5\lib\net45\MindFusion.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Common.WinForms, Version=1.0.3.452, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>packages\MindFusion.Diagramming.6.8.5\lib\net45\MindFusion.Common.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Diagramming, Version=6.8.5.450, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>packages\MindFusion.Diagramming.6.8.5\lib\net45\MindFusion.Diagramming.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Diagramming.EffectsProvider, Version=6.8.5.450, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>packages\MindFusion.Diagramming.6.8.5\lib\net45\MindFusion.Diagramming.EffectsProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Diagramming.Export.Dxf, Version=6.8.5.450, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>packages\MindFusion.Diagramming.6.8.5\lib\net45\MindFusion.Diagramming.Export.Dxf.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Diagramming.Export.Excel, Version=6.8.5.450, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>packages\MindFusion.Diagramming.6.8.5\lib\net45\MindFusion.Diagramming.Export.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Diagramming.Export.Pdf, Version=6.8.5.450, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>packages\MindFusion.Diagramming.6.8.5\lib\net45\MindFusion.Diagramming.Export.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Diagramming.Export.Svg, Version=6.8.5.450, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>packages\MindFusion.Diagramming.6.8.5\lib\net45\MindFusion.Diagramming.Export.Svg.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Diagramming.Export.Swf, Version=6.8.5.450, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>packages\MindFusion.Diagramming.6.8.5\lib\net45\MindFusion.Diagramming.Export.Swf.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Diagramming.Export.Visio, Version=6.8.5.450, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>packages\MindFusion.Diagramming.6.8.5\lib\net45\MindFusion.Diagramming.Export.Visio.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Diagramming.Export.Wmf, Version=6.8.5.450, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>packages\MindFusion.Diagramming.6.8.5\lib\net45\MindFusion.Diagramming.Export.Wmf.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Diagramming.Import.Draw, Version=6.8.5.450, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>packages\MindFusion.Diagramming.6.8.5\lib\net45\MindFusion.Diagramming.Import.Draw.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Diagramming.Import.Svg, Version=6.8.5.450, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>packages\MindFusion.Diagramming.6.8.5\lib\net45\MindFusion.Diagramming.Import.Svg.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Diagramming.Import.Visio, Version=6.8.5.450, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>packages\MindFusion.Diagramming.6.8.5\lib\net45\MindFusion.Diagramming.Import.Visio.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Diagramming.WinForms, Version=6.8.5.450, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>packages\MindFusion.Diagramming.6.8.5\lib\net45\MindFusion.Diagramming.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Diagramming.WinForms.Controls, Version=6.8.5.450, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>packages\MindFusion.Diagramming.6.8.5\lib\net45\MindFusion.Diagramming.WinForms.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Graphs, Version=2.3.3.451, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>packages\MindFusion.Diagramming.6.8.5\lib\net45\MindFusion.Graphs.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Licensing, Version=1.0.6.400, Culture=neutral, PublicKeyToken=9d02e21d957ddaef, processorArchitecture=MSIL">
+      <HintPath>packages\MindFusion.Diagramming.6.8.5\lib\net45\MindFusion.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Mapping, Version=2.0.3.451, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>packages\MindFusion.Diagramming.6.8.5\lib\net45\MindFusion.Mapping.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Pdf, Version=1.3.2.451, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>packages\MindFusion.Diagramming.6.8.5\lib\net45\MindFusion.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Scripting, Version=1.0.3.452, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>packages\MindFusion.Diagramming.6.8.5\lib\net45\MindFusion.Scripting.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Svg, Version=1.2.3.451, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>packages\MindFusion.Diagramming.6.8.5\lib\net45\MindFusion.Svg.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Swf, Version=1.0.2.452, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>packages\MindFusion.Diagramming.6.8.5\lib\net45\MindFusion.Swf.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Vsx, Version=1.0.4.451, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>packages\MindFusion.Diagramming.6.8.5\lib\net45\MindFusion.Vsx.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Zip, Version=1.0.1.451, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL">
+      <HintPath>packages\MindFusion.Diagramming.6.8.5\lib\net45\MindFusion.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.2-beta1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="OxyPlot, Version=2.1.0.0, Culture=neutral, PublicKeyToken=638079a8f0bd61e9, processorArchitecture=MSIL">
+      <HintPath>packages\OxyPlot.Core.2.1.0\lib\net45\OxyPlot.dll</HintPath>
+    </Reference>
+    <Reference Include="OxyPlot.WindowsForms, Version=2.1.0.0, Culture=neutral, PublicKeyToken=245eacd6b5d2d338, processorArchitecture=MSIL">
+      <HintPath>packages\OxyPlot.WindowsForms.2.1.0\lib\net45\OxyPlot.WindowsForms.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing.Common, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Drawing.Common.4.5.0\lib\net461\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Windows.Forms.Ribbon35, Version=3.5.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\System.Windows.Forms.Ribbon35.3.5.8.0\lib\net35\System.Windows.Forms.Ribbon35.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="ZedGraph, Version=6.0.0.0, Culture=neutral, PublicKeyToken=02a83cbd123fcd60, processorArchitecture=MSIL">
+      <HintPath>packages\ZedGraph.6.0.0-alpha0001\lib\net47\ZedGraph.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DATask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DATask.Designer.cs">
+      <DependentUpon>DATask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PCA\PCATask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PCA\PCATask.Designer.cs">
+      <DependentUpon>PCATask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clustering\MakePredictionClusteringControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Clustering\MakePredictionClusteringControl.Designer.cs">
+      <DependentUpon>MakePredictionClusteringControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clustering\ClusteringTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clustering\ClusteringTask.Designer.cs">
+      <DependentUpon>ClusteringTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Regression\MakePredictionRegressionControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Regression\MakePredictionRegressionControl.Designer.cs">
+      <DependentUpon>MakePredictionRegressionControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Regression\RegressionTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Regression\RegressionTask.Designer.cs">
+      <DependentUpon>RegressionTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classification\MulticlassClassificationTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classification\MulticlassClassificationTask.Designer.cs">
+      <DependentUpon>MulticlassClassificationTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classification\BinaryClassificationTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classification\BinaryClassificationTask.Designer.cs">
+      <DependentUpon>BinaryClassificationTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classification\MakePredictionClassificationControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classification\MakePredictionClassificationControl.Designer.cs">
+      <DependentUpon>MakePredictionClassificationControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clustering\ChooseClusteringModelDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clustering\ChooseClusteringModelDialog.Designer.cs">
+      <DependentUpon>ChooseClusteringModelDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clustering\ClustersControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Clustering\ClustersControl.Designer.cs">
+      <DependentUpon>ClustersControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clustering\KMedoidsLearningControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Clustering\KMedoidsLearningControl.Designer.cs">
+      <DependentUpon>KMedoidsLearningControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clustering\GaussianMixtureLearningControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Clustering\GaussianMixtureLearningControl.Designer.cs">
+      <DependentUpon>GaussianMixtureLearningControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clustering\MeanShiftLearningControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Clustering\MeanShiftLearningControl.Designer.cs">
+      <DependentUpon>MeanShiftLearningControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clustering\BinarySplitLearningControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Clustering\BinarySplitLearningControl.Designer.cs">
+      <DependentUpon>BinarySplitLearningControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clustering\KMeansLearningControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Clustering\KMeansLearningControl.Designer.cs">
+      <DependentUpon>KMeansLearningControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewTaskDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewTaskDialog.Designer.cs">
+      <DependentUpon>NewTaskDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SplitDatasetDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplitDatasetDialog.Designer.cs">
+      <DependentUpon>SplitDatasetDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VisualizeDataDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisualizeDataDialog.Designer.cs">
+      <DependentUpon>VisualizeDataDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clustering\VisualizeClustersDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clustering\VisualizeClustersDialog.Designer.cs">
+      <DependentUpon>VisualizeClustersDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clustering\VisualizeClusteringDataDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clustering\VisualizeClusteringDataDialog.Designer.cs">
+      <DependentUpon>VisualizeClusteringDataDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Regression\ANNRegressionLearningControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Regression\ANNRegressionLearningControl.Designer.cs">
+      <DependentUpon>ANNRegressionLearningControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Regression\SVMRegressionModelControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Regression\SVMRegressionModelControl.Designer.cs">
+      <DependentUpon>SVMRegressionModelControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Regression\PolynomialRegressionModelControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Regression\PolynomialRegressionModelControl.Designer.cs">
+      <DependentUpon>PolynomialRegressionModelControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Regression\LinearRegressionModelControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Regression\LinearRegressionModelControl.Designer.cs">
+      <DependentUpon>LinearRegressionModelControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Regression\SVMRegressionLearningControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Regression\SVMRegressionLearningControl.Designer.cs">
+      <DependentUpon>SVMRegressionLearningControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Regression\TestRegressionControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Regression\TestRegressionControl.Designer.cs">
+      <DependentUpon>TestRegressionControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Regression\LinearRegressionLearningControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Regression\LinearRegressionLearningControl.Designer.cs">
+      <DependentUpon>LinearRegressionLearningControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Regression\PolynomialRegressionLearningControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Regression\PolynomialRegressionLearningControl.Designer.cs">
+      <DependentUpon>PolynomialRegressionLearningControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Regression\VisualizeRegressionTestResultDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Regression\VisualizeRegressionTestResultDialog.Designer.cs">
+      <DependentUpon>VisualizeRegressionTestResultDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Regression\VisualizeRegressionDataDialogy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Regression\VisualizeRegressionDataDialogy.Designer.cs">
+      <DependentUpon>VisualizeRegressionDataDialogy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Regression\ChooseRegressionModelDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Regression\ChooseRegressionModelDialog.Designer.cs">
+      <DependentUpon>ChooseRegressionModelDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classification\ChooseMulticlassClassificationModelDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classification\ChooseMulticlassClassificationModelDialog.Designer.cs">
+      <DependentUpon>ChooseMulticlassClassificationModelDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classification\MultinomialLogisticRegressionModelControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classification\MultinomialLogisticRegressionModelControl.Designer.cs">
+      <DependentUpon>MultinomialLogisticRegressionModelControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classification\MultinomialLogisticRegressionLearningControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classification\MultinomialLogisticRegressionLearningControl.Designer.cs">
+      <DependentUpon>MultinomialLogisticRegressionLearningControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classification\TestMulticlassClassificationControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classification\TestMulticlassClassificationControl.Designer.cs">
+      <DependentUpon>TestMulticlassClassificationControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classification\ChooseBinaryClassificationModelDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classification\ChooseBinaryClassificationModelDialog.Designer.cs">
+      <DependentUpon>ChooseBinaryClassificationModelDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classification\ANNClassificationLearningControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classification\ANNClassificationLearningControl.Designer.cs">
+      <DependentUpon>ANNClassificationLearningControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classification\SVMClassificationModelControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classification\SVMClassificationModelControl.Designer.cs">
+      <DependentUpon>SVMClassificationModelControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classification\SVMClassificationLearningControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classification\SVMClassificationLearningControl.Designer.cs">
+      <DependentUpon>SVMClassificationLearningControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classification\RandomForestModelControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classification\RandomForestModelControl.Designer.cs">
+      <DependentUpon>RandomForestModelControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classification\RandomForestLearningControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classification\RandomForestLearningControl.Designer.cs">
+      <DependentUpon>RandomForestLearningControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classification\DecisionTreeModelControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classification\DecisionTreeModelControl.Designer.cs">
+      <DependentUpon>DecisionTreeModelControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classification\DecisionTreeLearningControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classification\DecisionTreeLearningControl.Designer.cs">
+      <DependentUpon>DecisionTreeLearningControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classification\KNearestNeighborsLearningControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classification\KNearestNeighborsLearningControl.Designer.cs">
+      <DependentUpon>KNearestNeighborsLearningControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classification\LogisticRegressionLearningControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classification\LogisticRegressionLearningControl.Designer.cs">
+      <DependentUpon>LogisticRegressionLearningControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classification\LogisticRegressionModelControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classification\LogisticRegressionModelControl.Designer.cs">
+      <DependentUpon>LogisticRegressionModelControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classification\MinimumMeanDistanceLearningControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classification\MinimumMeanDistanceLearningControl.Designer.cs">
+      <DependentUpon>MinimumMeanDistanceLearningControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classification\NaiveBayesModelControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classification\NaiveBayesModelControl.Designer.cs">
+      <DependentUpon>NaiveBayesModelControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classification\NaiveBayesLearningControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classification\NaiveBayesLearningControl.Designer.cs">
+      <DependentUpon>NaiveBayesLearningControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classification\TestBinaryClassificationControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classification\TestBinaryClassificationControl.Designer.cs">
+      <DependentUpon>TestBinaryClassificationControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Classification\VisualizeClassificationTestResultDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classification\VisualizeClassificationTestResultDialog.Designer.cs">
+      <DependentUpon>VisualizeClassificationTestResultDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classification\VisualizeClassificationDataDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classification\VisualizeClassificationDataDialog.Designer.cs">
+      <DependentUpon>VisualizeClassificationDataDialog.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DATask.resx">
+      <DependentUpon>DATask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PCA\PCATask.resx">
+      <DependentUpon>PCATask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clustering\MakePredictionClusteringControl.resx">
+      <DependentUpon>MakePredictionClusteringControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clustering\ClusteringTask.resx">
+      <DependentUpon>ClusteringTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Regression\MakePredictionRegressionControl.resx">
+      <DependentUpon>MakePredictionRegressionControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Regression\RegressionTask.resx">
+      <DependentUpon>RegressionTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classification\MulticlassClassificationTask.resx">
+      <DependentUpon>MulticlassClassificationTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classification\BinaryClassificationTask.resx">
+      <DependentUpon>BinaryClassificationTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classification\MakePredictionClassificationControl.resx">
+      <DependentUpon>MakePredictionClassificationControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clustering\ChooseClusteringModelDialog.resx">
+      <DependentUpon>ChooseClusteringModelDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clustering\ClustersControl.resx">
+      <DependentUpon>ClustersControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clustering\KMedoidsLearningControl.resx">
+      <DependentUpon>KMedoidsLearningControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clustering\GaussianMixtureLearningControl.resx">
+      <DependentUpon>GaussianMixtureLearningControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clustering\MeanShiftLearningControl.resx">
+      <DependentUpon>MeanShiftLearningControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clustering\BinarySplitLearningControl.resx">
+      <DependentUpon>BinarySplitLearningControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clustering\KMeansLearningControl.resx">
+      <DependentUpon>KMeansLearningControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewTaskDialog.resx">
+      <DependentUpon>NewTaskDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplitDatasetDialog.resx">
+      <DependentUpon>SplitDatasetDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisualizeDataDialog.resx">
+      <DependentUpon>VisualizeDataDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clustering\VisualizeClustersDialog.resx">
+      <DependentUpon>VisualizeClustersDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clustering\VisualizeClusteringDataDialog.resx">
+      <DependentUpon>VisualizeClusteringDataDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Regression\ANNRegressionLearningControl.resx">
+      <DependentUpon>ANNRegressionLearningControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Regression\SVMRegressionModelControl.resx">
+      <DependentUpon>SVMRegressionModelControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Regression\PolynomialRegressionModelControl.resx">
+      <DependentUpon>PolynomialRegressionModelControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Regression\LinearRegressionModelControl.resx">
+      <DependentUpon>LinearRegressionModelControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Regression\SVMRegressionLearningControl.resx">
+      <DependentUpon>SVMRegressionLearningControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Regression\TestRegressionControl.resx">
+      <DependentUpon>TestRegressionControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Regression\LinearRegressionLearningControl.resx">
+      <DependentUpon>LinearRegressionLearningControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Regression\PolynomialRegressionLearningControl.resx">
+      <DependentUpon>PolynomialRegressionLearningControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Regression\VisualizeRegressionTestResultDialog.resx">
+      <DependentUpon>VisualizeRegressionTestResultDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Regression\VisualizeRegressionDataDialogy.resx">
+      <DependentUpon>VisualizeRegressionDataDialogy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Regression\ChooseRegressionModelDialog.resx">
+      <DependentUpon>ChooseRegressionModelDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classification\ChooseMulticlassClassificationModelDialog.resx">
+      <DependentUpon>ChooseMulticlassClassificationModelDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classification\MultinomialLogisticRegressionModelControl.resx">
+      <DependentUpon>MultinomialLogisticRegressionModelControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classification\MultinomialLogisticRegressionLearningControl.resx">
+      <DependentUpon>MultinomialLogisticRegressionLearningControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classification\TestMulticlassClassificationControl.resx">
+      <DependentUpon>TestMulticlassClassificationControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classification\ChooseBinaryClassificationModelDialog.resx">
+      <DependentUpon>ChooseBinaryClassificationModelDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classification\ANNClassificationLearningControl.resx">
+      <DependentUpon>ANNClassificationLearningControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classification\SVMClassificationModelControl.resx">
+      <DependentUpon>SVMClassificationModelControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classification\SVMClassificationLearningControl.resx">
+      <DependentUpon>SVMClassificationLearningControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classification\RandomForestModelControl.resx">
+      <DependentUpon>RandomForestModelControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classification\RandomForestLearningControl.resx">
+      <DependentUpon>RandomForestLearningControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classification\DecisionTreeModelControl.resx">
+      <DependentUpon>DecisionTreeModelControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classification\DecisionTreeLearningControl.resx">
+      <DependentUpon>DecisionTreeLearningControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classification\KNearestNeighborsLearningControl.resx">
+      <DependentUpon>KNearestNeighborsLearningControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classification\LogisticRegressionLearningControl.resx">
+      <DependentUpon>LogisticRegressionLearningControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classification\LogisticRegressionModelControl.resx">
+      <DependentUpon>LogisticRegressionModelControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classification\MinimumMeanDistanceLearningControl.resx">
+      <DependentUpon>MinimumMeanDistanceLearningControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classification\NaiveBayesModelControl.resx">
+      <DependentUpon>NaiveBayesModelControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classification\NaiveBayesLearningControl.resx">
+      <DependentUpon>NaiveBayesLearningControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classification\TestBinaryClassificationControl.resx">
+      <DependentUpon>TestBinaryClassificationControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classification\VisualizeClassificationTestResultDialog.resx">
+      <DependentUpon>VisualizeClassificationTestResultDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classification\VisualizeClassificationDataDialog.resx">
+      <DependentUpon>VisualizeClassificationDataDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include=".editorconfig" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Readme.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icon.ico" />
+    <None Include="Resources\binary-classification.png" />
+    <None Include="Resources\clustering.png" />
+    <None Include="Resources\da.png" />
+    <None Include="Resources\load-dataset.png" />
+    <None Include="Resources\load-model.png" />
+    <None Include="Resources\load-prediction-dataset.png" />
+    <None Include="Resources\load-testing-dataset.png" />
+    <None Include="Resources\load-training-dataset.png" />
+    <None Include="Resources\multiclass-classification.png" />
+    <None Include="Resources\pca.png" />
+    <None Include="Resources\predict.png" />
+    <None Include="Resources\regression.png" />
+    <None Include="Resources\split-dataset.png" />
+    <None Include="Resources\start.png" />
+    <None Include="Resources\stop.png" />
+    <None Include="Resources\test.png" />
+    <None Include="Resources\train-model.png" />
+    <Content Include="Updates.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\" />
+    <Folder Include="Sample datasets\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="packages\Accord.3.8.2-alpha\build\Accord.targets" Condition="Exists('packages\Accord.3.8.2-alpha\build\Accord.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Accord.3.8.2-alpha\build\Accord.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Accord.3.8.2-alpha\build\Accord.targets'))" />
+  </Target>
+</Project>
