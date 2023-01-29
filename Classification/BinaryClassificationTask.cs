@@ -710,22 +710,11 @@ namespace JadeML.Classification
                 else if (modelTabPage.Controls[0].GetType() == typeof(DecisionTreeLearningControl))
                 {
                     DecisionTreeLearningControl decisionTreeLearningControl = (DecisionTreeLearningControl)modelTabPage.Controls[0];
-                    if (decisionTreeLearningControl.MethodComboBox.SelectedItem.ToString() == "C4.5")
-                    {
-                        DecisionVariable[] decisionVariables = new DecisionVariable[features.Length];
-                        for (int columnIndex = 0; columnIndex < features.Length; columnIndex++)
-                            decisionVariables[columnIndex] = new DecisionVariable(features[columnIndex], DecisionVariableKind.Continuous);
-                        C45Learning c45Learning = new C45Learning(decisionVariables);
-                        classifier = c45Learning.Learn(trainingInputColumns, trainingClassIndexColumn);
-                    }
-                    else // MethodComboBox.SelectedItem.ToString() == "ID3"
-                    {
-                        DecisionVariable[] decisionVariables = new DecisionVariable[features.Length];
-                        for (int columnIndex = 0; columnIndex < features.Length; columnIndex++)
-                            decisionVariables[columnIndex] = new DecisionVariable(features[columnIndex], DecisionVariableKind.Discrete);
-                        ID3Learning id3Learning = new ID3Learning(decisionVariables);
-                        classifier = id3Learning.Learn(trainingInputColumns.ToInt32(), trainingClassIndexColumn);
-                    }
+                    DecisionVariable[] decisionVariables = new DecisionVariable[features.Length];
+                    for (int columnIndex = 0; columnIndex < features.Length; columnIndex++)
+                        decisionVariables[columnIndex] = new DecisionVariable(features[columnIndex], DecisionVariableKind.Continuous);
+                    C45Learning c45Learning = new C45Learning(decisionVariables);
+                    classifier = c45Learning.Learn(trainingInputColumns, trainingClassIndexColumn);
                 }
                 else if (modelTabPage.Controls[0].GetType() == typeof(RandomForestLearningControl))
                 {
