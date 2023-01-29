@@ -734,14 +734,14 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="Readme.md" />
-    <None Include="Sample datasets\BinaryClassification _predict.csv" />
-    <None Include="Sample datasets\BinaryClassification.csv" />
-    <None Include="Sample datasets\BreastCancer.csv" />
-    <None Include="Sample datasets\BreastCancer_predict.csv" />
-    <None Include="Sample datasets\IrisFlower.csv" />
-    <None Include="Sample datasets\IrisFlower_predict.csv" />
-    <None Include="Sample datasets\RedWines.csv" />
-    <None Include="Sample datasets\RedWines_predict.csv" />
+    <None Include="SampleDatasets\BinaryClassification _predict.csv" />
+    <None Include="SampleDatasets\BinaryClassification.csv" />
+    <None Include="SampleDatasets\BreastCancer.csv" />
+    <None Include="SampleDatasets\BreastCancer_predict.csv" />
+    <None Include="SampleDatasets\IrisFlower.csv" />
+    <None Include="SampleDatasets\IrisFlower_predict.csv" />
+    <None Include="SampleDatasets\RedWines.csv" />
+    <None Include="SampleDatasets\RedWines_predict.csv" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

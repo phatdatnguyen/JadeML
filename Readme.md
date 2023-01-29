@@ -25,6 +25,7 @@ A GUI software for simple machine learning (ML) tasks in Windows.
 
 ***For unsupervised learning tasks***: the dataset must contain one or more input columns. All input data must be numeric.
 
+*(Some prepared sample datasets are available in the SampleDatasets folder)*
 
 ## Supported models
 #### Classification and Regression
