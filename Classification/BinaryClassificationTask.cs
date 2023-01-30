@@ -223,7 +223,7 @@ namespace JadeML.Classification
 
         private void BinaryClassificationTask_Resize(object sender, EventArgs e)
         {
-            taskTableLayoutPanel.Height = Height - 64;
+            taskSplitContainer.Height = Height - 64;
         }
         
         private void BinaryClassificationForm_FormClosing(object sender, FormClosingEventArgs e)

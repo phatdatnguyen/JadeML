@@ -541,7 +541,7 @@ namespace JadeML
                         string[] classLabels = dataset.Columns[dataset.Columns.Count - 1].ToArray<string>().Distinct().OrderBy(x => x).ToArray();
                         if (classLabels.Length == 1)
                             throw new Exception("Dataset contains only 1 class!");
-                        if (classLabels.Length > 10)
+                        if ((ActiveMdiChild.GetType() == typeof(BinaryClassificationTask) && classLabels.Length > 2) || classLabels.Length > 10)
                             throw new Exception("Dataset contains too many classes!");
                     }
 

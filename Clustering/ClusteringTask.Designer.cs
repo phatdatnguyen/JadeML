@@ -33,8 +33,8 @@ namespace JadeML.Clustering
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.statusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.taskDiagram = new MindFusion.Diagramming.Diagram();
-            this.taskTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.taskDiagramPanel = new System.Windows.Forms.Panel();
+            this.diagramSplitContainer = new System.Windows.Forms.SplitContainer();
             this.taskDiagramView = new MindFusion.Diagramming.WinForms.DiagramView();
             this.taskDiagramZoomControl = new MindFusion.Common.WinForms.ZoomControl();
             this.modelVisualizationGroupBox = new System.Windows.Forms.GroupBox();
@@ -49,9 +49,13 @@ namespace JadeML.Clustering
             this.modelTabPage = new System.Windows.Forms.TabPage();
             this.predictionTabPage = new System.Windows.Forms.TabPage();
             this.makePredictionClusteringControl = new JadeML.Clustering.MakePredictionClusteringControl();
+            this.taskSplitContainer = new System.Windows.Forms.SplitContainer();
             this.statusStrip.SuspendLayout();
-            this.taskTableLayoutPanel.SuspendLayout();
             this.taskDiagramPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.diagramSplitContainer)).BeginInit();
+            this.diagramSplitContainer.Panel1.SuspendLayout();
+            this.diagramSplitContainer.Panel2.SuspendLayout();
+            this.diagramSplitContainer.SuspendLayout();
             this.modelVisualizationGroupBox.SuspendLayout();
             this.taskTabControl.SuspendLayout();
             this.dataTabPage.SuspendLayout();
@@ -59,6 +63,10 @@ namespace JadeML.Clustering
             ((System.ComponentModel.ISupportInitialize)(this.datasetDataGridView)).BeginInit();
             this.dataPanel.SuspendLayout();
             this.predictionTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.taskSplitContainer)).BeginInit();
+            this.taskSplitContainer.Panel1.SuspendLayout();
+            this.taskSplitContainer.Panel2.SuspendLayout();
+            this.taskSplitContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip
@@ -85,31 +93,32 @@ namespace JadeML.Clustering
             this.taskDiagram.NodeDeleting += new System.EventHandler<MindFusion.Diagramming.NodeValidationEventArgs>(this.taskDiagram_NodeDeleting);
             this.taskDiagram.SelectionChanged += new System.EventHandler(this.taskDiagram_SelectionChanged);
             // 
-            // taskTableLayoutPanel
-            // 
-            this.taskTableLayoutPanel.ColumnCount = 1;
-            this.taskTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.taskTableLayoutPanel.Controls.Add(this.taskDiagramPanel, 0, 0);
-            this.taskTableLayoutPanel.Controls.Add(this.taskTabControl, 0, 1);
-            this.taskTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.taskTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
-            this.taskTableLayoutPanel.Name = "taskTableLayoutPanel";
-            this.taskTableLayoutPanel.RowCount = 2;
-            this.taskTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 250F));
-            this.taskTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.taskTableLayoutPanel.Size = new System.Drawing.Size(684, 496);
-            this.taskTableLayoutPanel.TabIndex = 12;
-            // 
             // taskDiagramPanel
             // 
-            this.taskDiagramPanel.Controls.Add(this.taskDiagramView);
-            this.taskDiagramPanel.Controls.Add(this.taskDiagramZoomControl);
-            this.taskDiagramPanel.Controls.Add(this.modelVisualizationGroupBox);
+            this.taskDiagramPanel.Controls.Add(this.diagramSplitContainer);
             this.taskDiagramPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.taskDiagramPanel.Location = new System.Drawing.Point(3, 3);
+            this.taskDiagramPanel.Location = new System.Drawing.Point(0, 0);
             this.taskDiagramPanel.Name = "taskDiagramPanel";
-            this.taskDiagramPanel.Size = new System.Drawing.Size(678, 244);
-            this.taskDiagramPanel.TabIndex = 5;
+            this.taskDiagramPanel.Size = new System.Drawing.Size(684, 248);
+            this.taskDiagramPanel.TabIndex = 0;
+            // 
+            // diagramSplitContainer
+            // 
+            this.diagramSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.diagramSplitContainer.Location = new System.Drawing.Point(0, 0);
+            this.diagramSplitContainer.Name = "diagramSplitContainer";
+            // 
+            // diagramSplitContainer.Panel1
+            // 
+            this.diagramSplitContainer.Panel1.Controls.Add(this.taskDiagramView);
+            this.diagramSplitContainer.Panel1.Controls.Add(this.taskDiagramZoomControl);
+            // 
+            // diagramSplitContainer.Panel2
+            // 
+            this.diagramSplitContainer.Panel2.Controls.Add(this.modelVisualizationGroupBox);
+            this.diagramSplitContainer.Size = new System.Drawing.Size(684, 248);
+            this.diagramSplitContainer.SplitterDistance = 450;
+            this.diagramSplitContainer.TabIndex = 0;
             // 
             // taskDiagramView
             // 
@@ -119,30 +128,30 @@ namespace JadeML.Clustering
             this.taskDiagramView.LicenseKey = null;
             this.taskDiagramView.Location = new System.Drawing.Point(0, 0);
             this.taskDiagramView.Name = "taskDiagramView";
-            this.taskDiagramView.Size = new System.Drawing.Size(318, 244);
-            this.taskDiagramView.TabIndex = 1;
+            this.taskDiagramView.Size = new System.Drawing.Size(390, 248);
+            this.taskDiagramView.TabIndex = 0;
             this.taskDiagramView.Text = "diagramView1";
             // 
             // taskDiagramZoomControl
             // 
             this.taskDiagramZoomControl.BackColor = System.Drawing.Color.Transparent;
             this.taskDiagramZoomControl.Dock = System.Windows.Forms.DockStyle.Right;
-            this.taskDiagramZoomControl.Location = new System.Drawing.Point(318, 0);
+            this.taskDiagramZoomControl.Location = new System.Drawing.Point(390, 0);
             this.taskDiagramZoomControl.Name = "taskDiagramZoomControl";
             this.taskDiagramZoomControl.Padding = new System.Windows.Forms.Padding(5);
-            this.taskDiagramZoomControl.Size = new System.Drawing.Size(60, 244);
-            this.taskDiagramZoomControl.TabIndex = 2;
+            this.taskDiagramZoomControl.Size = new System.Drawing.Size(60, 248);
+            this.taskDiagramZoomControl.TabIndex = 1;
             this.taskDiagramZoomControl.Target = this.taskDiagramView;
             this.taskDiagramZoomControl.TickPosition = MindFusion.Common.WinForms.TickPosition.Left;
             // 
             // modelVisualizationGroupBox
             // 
             this.modelVisualizationGroupBox.Controls.Add(this.modelVisualizationPlotView);
-            this.modelVisualizationGroupBox.Dock = System.Windows.Forms.DockStyle.Right;
-            this.modelVisualizationGroupBox.Location = new System.Drawing.Point(378, 0);
+            this.modelVisualizationGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.modelVisualizationGroupBox.Location = new System.Drawing.Point(0, 0);
             this.modelVisualizationGroupBox.Name = "modelVisualizationGroupBox";
-            this.modelVisualizationGroupBox.Size = new System.Drawing.Size(300, 244);
-            this.modelVisualizationGroupBox.TabIndex = 4;
+            this.modelVisualizationGroupBox.Size = new System.Drawing.Size(230, 248);
+            this.modelVisualizationGroupBox.TabIndex = 2;
             this.modelVisualizationGroupBox.TabStop = false;
             this.modelVisualizationGroupBox.Text = "2D visualization";
             this.modelVisualizationGroupBox.Visible = false;
@@ -153,8 +162,8 @@ namespace JadeML.Clustering
             this.modelVisualizationPlotView.Location = new System.Drawing.Point(3, 16);
             this.modelVisualizationPlotView.Name = "modelVisualizationPlotView";
             this.modelVisualizationPlotView.PanCursor = System.Windows.Forms.Cursors.Hand;
-            this.modelVisualizationPlotView.Size = new System.Drawing.Size(294, 225);
-            this.modelVisualizationPlotView.TabIndex = 3;
+            this.modelVisualizationPlotView.Size = new System.Drawing.Size(224, 229);
+            this.modelVisualizationPlotView.TabIndex = 0;
             this.modelVisualizationPlotView.Text = "plotView1";
             this.modelVisualizationPlotView.ZoomHorizontalCursor = System.Windows.Forms.Cursors.SizeWE;
             this.modelVisualizationPlotView.ZoomRectangleCursor = System.Windows.Forms.Cursors.SizeNWSE;
@@ -166,11 +175,11 @@ namespace JadeML.Clustering
             this.taskTabControl.Controls.Add(this.modelTabPage);
             this.taskTabControl.Controls.Add(this.predictionTabPage);
             this.taskTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.taskTabControl.Location = new System.Drawing.Point(3, 253);
+            this.taskTabControl.Location = new System.Drawing.Point(0, 0);
             this.taskTabControl.Name = "taskTabControl";
             this.taskTabControl.SelectedIndex = 0;
-            this.taskTabControl.Size = new System.Drawing.Size(678, 240);
-            this.taskTabControl.TabIndex = 2;
+            this.taskTabControl.Size = new System.Drawing.Size(684, 244);
+            this.taskTabControl.TabIndex = 1;
             // 
             // dataTabPage
             // 
@@ -178,7 +187,7 @@ namespace JadeML.Clustering
             this.dataTabPage.Location = new System.Drawing.Point(4, 22);
             this.dataTabPage.Name = "dataTabPage";
             this.dataTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.dataTabPage.Size = new System.Drawing.Size(670, 214);
+            this.dataTabPage.Size = new System.Drawing.Size(676, 218);
             this.dataTabPage.TabIndex = 0;
             this.dataTabPage.Text = "Data";
             this.dataTabPage.UseVisualStyleBackColor = true;
@@ -195,7 +204,7 @@ namespace JadeML.Clustering
             this.datasetTableLayoutPanel.RowCount = 2;
             this.datasetTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.datasetTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.datasetTableLayoutPanel.Size = new System.Drawing.Size(664, 208);
+            this.datasetTableLayoutPanel.Size = new System.Drawing.Size(670, 212);
             this.datasetTableLayoutPanel.TabIndex = 0;
             // 
             // datasetDataGridView
@@ -210,8 +219,8 @@ namespace JadeML.Clustering
             this.datasetDataGridView.ReadOnly = true;
             this.datasetDataGridView.RowHeadersWidth = 51;
             this.datasetDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datasetDataGridView.Size = new System.Drawing.Size(658, 162);
-            this.datasetDataGridView.TabIndex = 2;
+            this.datasetDataGridView.Size = new System.Drawing.Size(664, 166);
+            this.datasetDataGridView.TabIndex = 1;
             // 
             // dataPanel
             // 
@@ -220,7 +229,7 @@ namespace JadeML.Clustering
             this.dataPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataPanel.Location = new System.Drawing.Point(3, 3);
             this.dataPanel.Name = "dataPanel";
-            this.dataPanel.Size = new System.Drawing.Size(658, 34);
+            this.dataPanel.Size = new System.Drawing.Size(664, 34);
             this.dataPanel.TabIndex = 0;
             // 
             // datasetVisualizeButton
@@ -229,7 +238,7 @@ namespace JadeML.Clustering
             this.datasetVisualizeButton.Margin = new System.Windows.Forms.Padding(2);
             this.datasetVisualizeButton.Name = "datasetVisualizeButton";
             this.datasetVisualizeButton.Size = new System.Drawing.Size(75, 23);
-            this.datasetVisualizeButton.TabIndex = 3;
+            this.datasetVisualizeButton.TabIndex = 0;
             this.datasetVisualizeButton.Text = "Visualize...";
             this.datasetVisualizeButton.UseVisualStyleBackColor = true;
             this.datasetVisualizeButton.Click += new System.EventHandler(this.datasetVisualizeButton_Click);
@@ -241,7 +250,7 @@ namespace JadeML.Clustering
             this.datasetLabel.Location = new System.Drawing.Point(3, 9);
             this.datasetLabel.Name = "datasetLabel";
             this.datasetLabel.Size = new System.Drawing.Size(139, 20);
-            this.datasetLabel.TabIndex = 1;
+            this.datasetLabel.TabIndex = 0;
             this.datasetLabel.Text = "Training dataset";
             // 
             // modelTabPage
@@ -250,7 +259,7 @@ namespace JadeML.Clustering
             this.modelTabPage.Location = new System.Drawing.Point(4, 22);
             this.modelTabPage.Name = "modelTabPage";
             this.modelTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.modelTabPage.Size = new System.Drawing.Size(670, 214);
+            this.modelTabPage.Size = new System.Drawing.Size(676, 218);
             this.modelTabPage.TabIndex = 1;
             this.modelTabPage.Text = "Model";
             this.modelTabPage.UseVisualStyleBackColor = true;
@@ -262,7 +271,7 @@ namespace JadeML.Clustering
             this.predictionTabPage.Location = new System.Drawing.Point(4, 22);
             this.predictionTabPage.Name = "predictionTabPage";
             this.predictionTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.predictionTabPage.Size = new System.Drawing.Size(670, 214);
+            this.predictionTabPage.Size = new System.Drawing.Size(676, 218);
             this.predictionTabPage.TabIndex = 3;
             this.predictionTabPage.Text = "Prediction";
             this.predictionTabPage.UseVisualStyleBackColor = true;
@@ -274,8 +283,26 @@ namespace JadeML.Clustering
             this.makePredictionClusteringControl.Location = new System.Drawing.Point(3, 3);
             this.makePredictionClusteringControl.Margin = new System.Windows.Forms.Padding(2);
             this.makePredictionClusteringControl.Name = "makePredictionClusteringControl";
-            this.makePredictionClusteringControl.Size = new System.Drawing.Size(647, 325);
+            this.makePredictionClusteringControl.Size = new System.Drawing.Size(653, 325);
             this.makePredictionClusteringControl.TabIndex = 0;
+            // 
+            // taskSplitContainer
+            // 
+            this.taskSplitContainer.Dock = System.Windows.Forms.DockStyle.Top;
+            this.taskSplitContainer.Location = new System.Drawing.Point(0, 0);
+            this.taskSplitContainer.Name = "taskSplitContainer";
+            this.taskSplitContainer.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // taskSplitContainer.Panel1
+            // 
+            this.taskSplitContainer.Panel1.Controls.Add(this.taskDiagramPanel);
+            // 
+            // taskSplitContainer.Panel2
+            // 
+            this.taskSplitContainer.Panel2.Controls.Add(this.taskTabControl);
+            this.taskSplitContainer.Size = new System.Drawing.Size(684, 496);
+            this.taskSplitContainer.SplitterDistance = 248;
+            this.taskSplitContainer.TabIndex = 0;
             // 
             // ClusteringTask
             // 
@@ -283,7 +310,7 @@ namespace JadeML.Clustering
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(684, 521);
-            this.Controls.Add(this.taskTableLayoutPanel);
+            this.Controls.Add(this.taskSplitContainer);
             this.Controls.Add(this.statusStrip);
             this.MinimumSize = new System.Drawing.Size(699, 558);
             this.Name = "ClusteringTask";
@@ -294,8 +321,11 @@ namespace JadeML.Clustering
             this.Resize += new System.EventHandler(this.BinaryClassificationTask_Resize);
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
-            this.taskTableLayoutPanel.ResumeLayout(false);
             this.taskDiagramPanel.ResumeLayout(false);
+            this.diagramSplitContainer.Panel1.ResumeLayout(false);
+            this.diagramSplitContainer.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.diagramSplitContainer)).EndInit();
+            this.diagramSplitContainer.ResumeLayout(false);
             this.modelVisualizationGroupBox.ResumeLayout(false);
             this.taskTabControl.ResumeLayout(false);
             this.dataTabPage.ResumeLayout(false);
@@ -304,6 +334,10 @@ namespace JadeML.Clustering
             this.dataPanel.ResumeLayout(false);
             this.dataPanel.PerformLayout();
             this.predictionTabPage.ResumeLayout(false);
+            this.taskSplitContainer.Panel1.ResumeLayout(false);
+            this.taskSplitContainer.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.taskSplitContainer)).EndInit();
+            this.taskSplitContainer.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -313,7 +347,6 @@ namespace JadeML.Clustering
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripStatusLabel statusLabel;
         private MindFusion.Diagramming.Diagram taskDiagram;
-        private System.Windows.Forms.TableLayoutPanel taskTableLayoutPanel;
         private System.Windows.Forms.TabControl taskTabControl;
         private System.Windows.Forms.TabPage dataTabPage;
         private System.Windows.Forms.TabPage modelTabPage;
@@ -329,5 +362,7 @@ namespace JadeML.Clustering
         private OxyPlot.WindowsForms.PlotView modelVisualizationPlotView;
         private System.Windows.Forms.GroupBox modelVisualizationGroupBox;
         private MakePredictionClusteringControl makePredictionClusteringControl;
+        private System.Windows.Forms.SplitContainer diagramSplitContainer;
+        private System.Windows.Forms.SplitContainer taskSplitContainer;
     }
 }

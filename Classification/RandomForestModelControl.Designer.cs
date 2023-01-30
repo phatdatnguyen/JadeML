@@ -103,7 +103,7 @@
             this.treeViewTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.treeViewTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.treeViewTableLayoutPanel.Size = new System.Drawing.Size(534, 347);
-            this.treeViewTableLayoutPanel.TabIndex = 7;
+            this.treeViewTableLayoutPanel.TabIndex = 0;
             // 
             // decisionTreeDiagramViewPanel
             // 
@@ -190,7 +190,7 @@
             this.treePruningPanel.Location = new System.Drawing.Point(541, 52);
             this.treePruningPanel.Name = "treePruningPanel";
             this.treePruningPanel.Size = new System.Drawing.Size(256, 345);
-            this.treePruningPanel.TabIndex = 6;
+            this.treePruningPanel.TabIndex = 1;
             // 
             // selectedTreeRadioButton
             // 
@@ -299,7 +299,7 @@
             this.treePruningLabel.Location = new System.Drawing.Point(541, 0);
             this.treePruningLabel.Name = "treePruningLabel";
             this.treePruningLabel.Size = new System.Drawing.Size(256, 49);
-            this.treePruningLabel.TabIndex = 2;
+            this.treePruningLabel.TabIndex = 0;
             this.treePruningLabel.Text = "Tree Pruning";
             this.treePruningLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
