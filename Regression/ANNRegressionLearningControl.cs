@@ -464,7 +464,7 @@ namespace JadeML.Regression
                         if (error <= tolerance)
                             isConverged = true;
 
-                        break;
+                        needToStop = true;
                     }
                 }
 
@@ -527,9 +527,15 @@ namespace JadeML.Regression
             if (isConverged)
             {
                 ModelConverged(new ModelTrainedEventArgs() { Model = ann });
-
+                enableControls(true);
                 trainingTimer.Stop();
 
+                return;
+            }
+            else if (needToStop)
+            {
+                trainingTimer.Stop();
+                enableControls(true);
                 TrainingStopped(new ModelModifiedEventArgs { Model = ann });
 
                 return;

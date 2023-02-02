@@ -163,7 +163,7 @@ namespace JadeML.Classification
 
             layers[layers.Length - 1] = classIndexes.Length; // output layer
             ann = new ActivationNetwork(activationFunction, numberOfInputs, layers);
-
+            
             BuildNetworkDiagram();
 
             startButton.Enabled = true;
@@ -483,7 +483,7 @@ namespace JadeML.Classification
                         if (error <= tolerance)
                             isConverged = true;
 
-                        break;
+                        needToStop = true;
                     }
                 }
 
@@ -546,9 +546,15 @@ namespace JadeML.Classification
             if (isConverged)
             {
                 ModelConverged(new ModelTrainedEventArgs() { Model = ann });
-
+                enableControls(true);
                 trainingTimer.Stop();
 
+                return;
+            }
+            else if (needToStop)
+            {
+                trainingTimer.Stop();
+                enableControls(true);
                 TrainingStopped(new ModelModifiedEventArgs { Model = ann });
 
                 return;

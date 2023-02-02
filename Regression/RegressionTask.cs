@@ -777,6 +777,9 @@ namespace JadeML.Regression
             }
             else
                 modelVisualizationGroupBox.Visible = false;
+
+            modelTabPage.BackColor = Color.LightYellow;
+            statusLabel.Text = "Training stopped.";
         }
 
         private void update2dVisualization()

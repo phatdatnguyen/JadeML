@@ -1010,6 +1010,9 @@ namespace JadeML.Classification
             }
             else
                 modelVisualizationGroupBox.Visible = false;
+
+            modelTabPage.BackColor = Color.LightYellow;
+            statusLabel.Text = "Training stopped.";
         }
 
         private void onModelModified(ModelModifiedEventArgs e)
