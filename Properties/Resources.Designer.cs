@@ -93,6 +93,16 @@ namespace JadeML.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap FacultyLogo {
+            get {
+                object obj = ResourceManager.GetObject("FacultyLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap load_dataset {
             get {
                 object obj = ResourceManager.GetObject("load_dataset", resourceCulture);
@@ -226,6 +236,16 @@ namespace JadeML.Properties {
         internal static System.Drawing.Bitmap train_model {
             get {
                 object obj = ResourceManager.GetObject("train_model", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UniversityLogo {
+            get {
+                object obj = ResourceManager.GetObject("UniversityLogo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

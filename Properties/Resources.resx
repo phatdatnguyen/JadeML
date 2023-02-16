@@ -118,26 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="binary_classification" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\binary-classification.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="clustering" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\clustering.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="da" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\da.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="load_dataset" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\load-dataset.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="load_model" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\load-model.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="load_prediction_dataset" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\load-prediction-dataset.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="load_testing_dataset" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\load-testing-dataset.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pca" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pca.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="load_training_dataset" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\load-training-dataset.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,28 +127,52 @@
   <data name="multiclass_classification" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\multiclass-classification.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pca" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pca.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="binary_classification" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\binary-classification.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="predict" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\predict.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="clustering" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\clustering.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="regression" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\regression.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="split_dataset" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\split-dataset.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="start" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\start.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="load_model" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\load-model.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="stop" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\stop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="test" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\test.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="FacultyLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FacultyLogo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="start" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\start.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="train_model" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\train-model.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="load_testing_dataset" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\load-testing-dataset.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="load_dataset" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\load-dataset.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="regression" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\regression.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="load_prediction_dataset" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\load-prediction-dataset.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="test" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\test.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="da" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\da.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="split_dataset" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\split-dataset.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="predict" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\predict.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UniversityLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UniversityLogo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

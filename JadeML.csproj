@@ -765,6 +765,8 @@
     <None Include="Resources\stop.png" />
     <None Include="Resources\test.png" />
     <None Include="Resources\train-model.png" />
+    <None Include="Resources\FacultyLogo.jpg" />
+    <None Include="Resources\UniversityLogo.jpg" />
     <Content Include="Updates.txt" />
   </ItemGroup>
   <ItemGroup>

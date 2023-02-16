@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
+using System.Security.Policy;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,12 +17,20 @@ namespace JadeML
         {
             InitializeComponent();
 
-            string softwareName = "DN Machine Learning";
+            string softwareName = "JadeML";
             Text = "About " + softwareName;
-            labelProductName.Text = softwareName;
-            labelVersion.Text = "Version: 1.0";
-            labelCopyright.Text = "Copyright © " + DateTime.Now.Year.ToString();
-            labelCompanyName.Text = "Author: Dat Nguyen";
+            productNameLabel.Text = softwareName;
+            versionLabel.Text = "Version: 1.0";
+            copyrightLabel.Text = "Copyright © " + DateTime.Now.Year.ToString();
+            authorLabel.Text = "Author: Dat Nguyen\n" +
+                "Ho Chi Minh City University of Technology and Education\n" +
+                "Faculty of Chemical and Food Technology";
+            contactLinkLabel.Text = "Contact: datnp@hcmute.edu.vn";
+        }
+
+        private void contactLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("mailto:datnp@hcmute.edu.vn");
         }
     }
 }
