@@ -1,36 +1,100 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Linq;
-using System.Reflection;
-using System.Security.Policy;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Reflection;
 
-namespace JadeML
+namespace JadeChem
 {
     partial class AboutBox : Form
     {
-        // Constructor
+        #region Constructor
         public AboutBox()
         {
             InitializeComponent();
 
-            string softwareName = "JadeML";
-            Text = "About " + softwareName;
-            productNameLabel.Text = softwareName;
-            versionLabel.Text = "Version: 1.0";
-            copyrightLabel.Text = "Copyright © " + DateTime.Now.Year.ToString();
-            authorLabel.Text = "Author: Dat Nguyen\n" +
-                "Ho Chi Minh City University of Technology and Education\n" +
-                "Faculty of Chemical and Food Technology";
-            contactLinkLabel.Text = "Contact: datnp@hcmute.edu.vn";
+            this.Text = String.Format("About {0}", AssemblyTitle);
+            this.labelProductName.Text = AssemblyProduct;
+            this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
+            this.labelCopyright.Text = AssemblyCopyright;
+            this.labelCompanyName.Text = AssemblyCompany;
+            this.textBoxDescription.Text = AssemblyDescription;
+        }
+        #endregion
+
+        #region Assembly Attribute Accessors
+        public static string AssemblyTitle
+        {
+            get
+            {
+                object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyTitleAttribute), false);
+                if (attributes.Length > 0)
+                {
+                    AssemblyTitleAttribute titleAttribute = (AssemblyTitleAttribute)attributes[0];
+                    if (titleAttribute.Title != "")
+                    {
+                        return titleAttribute.Title;
+                    }
+                }
+                return System.IO.Path.GetFileNameWithoutExtension(Assembly.GetExecutingAssembly().Location);
+            }
         }
 
-        private void contactLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        public static string AssemblyVersion
         {
-            System.Diagnostics.Process.Start("mailto:datnp@hcmute.edu.vn");
+            get
+            {
+                return Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            }
         }
+
+        public static string AssemblyDescription
+        {
+            get
+            {
+                object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyDescriptionAttribute), false);
+                if (attributes.Length == 0)
+                {
+                    return "";
+                }
+                return ((AssemblyDescriptionAttribute)attributes[0]).Description;
+            }
+        }
+
+        public static string AssemblyProduct
+        {
+            get
+            {
+                object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyProductAttribute), false);
+                if (attributes.Length == 0)
+                {
+                    return "";
+                }
+                return ((AssemblyProductAttribute)attributes[0]).Product;
+            }
+        }
+
+        public static string AssemblyCopyright
+        {
+            get
+            {
+                object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyCopyrightAttribute), false);
+                if (attributes.Length == 0)
+                {
+                    return "";
+                }
+                return ((AssemblyCopyrightAttribute)attributes[0]).Copyright;
+            }
+        }
+
+        public static string AssemblyCompany
+        {
+            get
+            {
+                object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyCompanyAttribute), false);
+                if (attributes.Length == 0)
+                {
+                    return "";
+                }
+                return ((AssemblyCompanyAttribute)attributes[0]).Company;
+            }
+        }
+        #endregion
     }
 }
