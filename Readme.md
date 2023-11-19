@@ -24,6 +24,6 @@ A GUI software for simple machine learning (ML) tasks in Windows.
   - Random Forest
   - Linear Regression
   - Support Vector Machine (SVM)
-  - Nultilayer Perceptron (MLP)
+  - Multilayer Perceptron (MLP)
 
   *** The ML models in this software are from [Accord.net](http://accord-framework.net/) and [TorchSharp](https://github.com/dotnet/TorchSharp) frameworks.
