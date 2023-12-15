@@ -30,7 +30,7 @@
     <PackageReference Include="MathNet.Numerics" Version="5.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="OxyPlot.WindowsForms" Version="2.1.2" />
-    <PackageReference Include="TorchSharp-cuda-windows" Version="0.100.5" />
+    <PackageReference Include="TorchSharp-cuda-windows" Version="0.101.4" />
   </ItemGroup>
 
   <ItemGroup>
