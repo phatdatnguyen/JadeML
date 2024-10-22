@@ -116,6 +116,7 @@
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "JadeML";
+            Load += MainForm_Load;
             MdiChildActivate += MainForm_MdiChildActivate;
             mainMenuStrip.ResumeLayout(false);
             mainMenuStrip.PerformLayout();

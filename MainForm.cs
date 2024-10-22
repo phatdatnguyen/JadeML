@@ -35,6 +35,15 @@
             aboutBox.ShowDialog(this);
         }
 
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            PredictionTaskForm predictionTaskForm = new()
+            {
+                MdiParent = this
+            };
+            predictionTaskForm.Show();
+        }
+
         private void MainForm_MdiChildActivate(object sender, EventArgs e)
         {
             if (ActiveMdiChild == null)
